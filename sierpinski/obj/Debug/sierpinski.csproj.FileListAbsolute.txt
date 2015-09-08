@@ -1,0 +1,9 @@
+D:\_Data\_Google_drive_2\ALG2\sierpinski\bin\Debug\sierpinski.exe.config
+D:\_Data\_Google_drive_2\ALG2\sierpinski\bin\Debug\sierpinski.exe
+D:\_Data\_Google_drive_2\ALG2\sierpinski\bin\Debug\sierpinski.pdb
+D:\_Data\_Google_drive_2\ALG2\sierpinski\obj\Debug\sierpinski.csprojResolveAssemblyReference.cache
+D:\_Data\_Google_drive_2\ALG2\sierpinski\obj\Debug\sierpinski.Form1.resources
+D:\_Data\_Google_drive_2\ALG2\sierpinski\obj\Debug\sierpinski.Properties.Resources.resources
+D:\_Data\_Google_drive_2\ALG2\sierpinski\obj\Debug\sierpinski.csproj.GenerateResource.Cache
+D:\_Data\_Google_drive_2\ALG2\sierpinski\obj\Debug\sierpinski.exe
+D:\_Data\_Google_drive_2\ALG2\sierpinski\obj\Debug\sierpinski.pdb

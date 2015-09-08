@@ -1,0 +1,6 @@
+D:\_Data\_Google_drive_2\ALG2\ALG2\bin\Debug\ALG2.exe.config
+D:\_Data\_Google_drive_2\ALG2\ALG2\bin\Debug\ALG2.exe
+D:\_Data\_Google_drive_2\ALG2\ALG2\bin\Debug\ALG2.pdb
+D:\_Data\_Google_drive_2\ALG2\ALG2\obj\Debug\ALG2.csprojResolveAssemblyReference.cache
+D:\_Data\_Google_drive_2\ALG2\ALG2\obj\Debug\ALG2.exe
+D:\_Data\_Google_drive_2\ALG2\ALG2\obj\Debug\ALG2.pdb
