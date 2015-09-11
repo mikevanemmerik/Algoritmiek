@@ -12,7 +12,9 @@ namespace week2
         {
             //new QuickSort();
             //new QuickSOrt3();
-            new MergeSort();
+            //new MergeSort();
+            //new BubbleSort();
+
             new BubbleSort();
 
             Console.ReadKey();

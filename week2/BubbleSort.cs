@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace week2
 {
-    class BubbleSort
+    public class BubbleSort
     {
         Stopwatch sw = new Stopwatch();
 
@@ -23,6 +23,7 @@ namespace week2
 
             sw.Start();
             //Do shizzle 2
+            bubs(numbers);
             sw.Stop();
             Console.WriteLine("bubblesort - 1: " + sw.Elapsed + " - Swaps: " + swaps + " vergelijking: " + vergelijkingen);
             //
@@ -30,8 +31,30 @@ namespace week2
             swaps = vergelijkingen = 0;
             sw.Start();
             //Do shizzle 2
+            bubs(numbers);
             sw.Stop();
             Console.WriteLine("bubblesort - 2: " + sw.Elapsed + " - Swaps: " + swaps + " vergelijking: " + vergelijkingen);
         }
+
+        public int[] bubs(int[] arr)
+        {
+            int temp = 0;
+
+            for (int write = 0; write < arr.Length; write++)
+            {
+                for (int sort = 0; sort < arr.Length - 1; sort++)
+                {
+                    if (arr[sort] > arr[sort + 1])
+                    {
+                        temp = arr[sort + 1];
+                        arr[sort + 1] = arr[sort];
+                        arr[sort] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+
+
     }
 }
