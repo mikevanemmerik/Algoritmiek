@@ -24,14 +24,14 @@ namespace week2
             sw.Start();
             //Do shizzle 2
             sw.Stop();
-            Console.WriteLine("Mergesort - 1: " + sw.Elapsed + " - Swaps: " + swaps + " vergelijking: " + vergelijkingen);
+            Console.WriteLine("bubblesort - 1: " + sw.Elapsed + " - Swaps: " + swaps + " vergelijking: " + vergelijkingen);
             //
             sw.Reset();
             swaps = vergelijkingen = 0;
             sw.Start();
             //Do shizzle 2
             sw.Stop();
-            Console.WriteLine("Mergesort - 2: " + sw.Elapsed + " - Swaps: " + swaps + " vergelijking: " + vergelijkingen);
+            Console.WriteLine("bubblesort - 2: " + sw.Elapsed + " - Swaps: " + swaps + " vergelijking: " + vergelijkingen);
         }
     }
 }
