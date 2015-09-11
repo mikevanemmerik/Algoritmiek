@@ -4,3 +4,9 @@ D:\_Data\_Google_drive_2\ALG2\ALG2\bin\Debug\ALG2.pdb
 D:\_Data\_Google_drive_2\ALG2\ALG2\obj\Debug\ALG2.csprojResolveAssemblyReference.cache
 D:\_Data\_Google_drive_2\ALG2\ALG2\obj\Debug\ALG2.exe
 D:\_Data\_Google_drive_2\ALG2\ALG2\obj\Debug\ALG2.pdb
+C:\Users\MIKE\Documents\GitHub\Algoritmiek\ALG2\bin\Debug\ALG2.exe.config
+C:\Users\MIKE\Documents\GitHub\Algoritmiek\ALG2\obj\Debug\ALG2.exe
+C:\Users\MIKE\Documents\GitHub\Algoritmiek\ALG2\obj\Debug\ALG2.pdb
+D:\_Data\Github\Algoritmiek\ALG2\bin\Debug\ALG2.exe.config
+D:\_Data\Github\Algoritmiek\ALG2\obj\Debug\ALG2.exe
+D:\_Data\Github\Algoritmiek\ALG2\obj\Debug\ALG2.pdb
