@@ -49,6 +49,8 @@ namespace week2
                         temp = arr[sort + 1];
                         arr[sort + 1] = arr[sort];
                         arr[sort] = temp;
+                        swaps++;
+                        vergelijkingen++;
                     }
                 }
             }
