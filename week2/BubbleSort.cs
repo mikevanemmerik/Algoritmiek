@@ -44,13 +44,14 @@ namespace week2
             {
                 for (int sort = 0; sort < arr.Length - 1; sort++)
                 {
+                    vergelijkingen++;
                     if (arr[sort] > arr[sort + 1])
                     {
                         temp = arr[sort + 1];
                         arr[sort + 1] = arr[sort];
                         arr[sort] = temp;
                         swaps++;
-                        vergelijkingen++;
+                        
                     }
                 }
             }
