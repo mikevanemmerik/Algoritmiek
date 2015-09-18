@@ -9,5 +9,6 @@ namespace week3b
     public abstract class Expression
     {
         public abstract int evaluate();
+        public abstract string ToString();
     }
 }

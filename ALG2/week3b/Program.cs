@@ -17,7 +17,7 @@ namespace week3b
 		    Number zeven = new Number(7);
 		    Operand dat_keer_zeven = new Operand('*', vier_plus_vijf, zeven);
 
-            Console.WriteLine("((4+5)*7): " + dat_keer_zeven.ToString()); // Should print "((4+5)*7)"
+            Console.WriteLine(" Should print ((4+5)*7): " + dat_keer_zeven.ToString()); // Should print "((4+5)*7)"
             Console.WriteLine("Should print 63: " + dat_keer_zeven.evaluate()); // Should print "63"
         }
     }

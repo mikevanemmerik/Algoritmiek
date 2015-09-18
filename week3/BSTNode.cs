@@ -95,13 +95,13 @@ namespace week3
 
         public void printInRange(int min, int max)
         {
-            if (left != null)
+            if (left != null && number > min)
                 left.printInRange(min, max);
 
             if (number > min && number < max)
                 Console.Write(" - " + number);
 
-            if (right != null)
+            if (right != null && number < max)
                 right.printInRange(min, max);
         }
 
@@ -144,12 +144,16 @@ namespace week3
 
         public bool exists(int number)
         {
+            bool a = false;
+          
+            
+
             if (this.number == number)
-                return true;
+                a =  true;
 
             if (left != null)
-                if (left.exists(number))
-                    return true;
+                a = a | (left.exists(number));
+                   
             if (right != null)
                if(right.exists(number))
                     return true;
