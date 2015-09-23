@@ -58,7 +58,7 @@ namespace week3
          */
         public int depth()
         {
-            if (root == null) return -1;
+            if (root == null) return 0;
             return root.depth();
         }
 
@@ -77,7 +77,7 @@ namespace week3
          */
         public void print()
         {
-            root.print();
+            if(root != null) root.print();
             Console.Write("\n");
         }
 
@@ -86,7 +86,7 @@ namespace week3
          */
         public void printInRange(int min, int max)
         {
-            root.printInRange(min, max);
+            if(root != null ) root.printInRange(min, max);
             Console.Write("\n");
         }
 
@@ -95,7 +95,7 @@ namespace week3
          */
         public void delete(int number)
         {
-            root.delete(number);
+            if(root != null ) root = root.delete(number);
         }
 
 
