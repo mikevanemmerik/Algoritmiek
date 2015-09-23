@@ -16,16 +16,17 @@ namespace week4
             tree.insert(50);
             tree.insert(60);
             tree.insert(49);
-            
-            //tree.insert(53);
-            //tree.insert(2);
-            //tree.insert(7);
-            //tree.insert(94);
-            //tree.insert(24);
-            //tree.insert(24);
-            //tree.insert(71);
-            //tree.insert(30);
-            //tree.insert(49);
+            tree.insert(11);
+            tree.insert(12);
+            tree.insert(53);
+            tree.insert(2);
+            tree.insert(7);
+            tree.insert(94);
+            tree.insert(24);
+            tree.insert(24);
+            tree.insert(71);
+            tree.insert(30);
+            tree.insert(49);
             tree.prettyprint();
 
             Console.WriteLine("\n==========================================\n");

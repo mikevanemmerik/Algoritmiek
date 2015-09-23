@@ -36,6 +36,22 @@ namespace week4
                 else
                     this.right.insert(number);
             }
+
+            if(!isAvlBalanced())
+            {
+                //Als depth LINKS meer, rotate RIght
+                //ALs depth RECHTS meer, rotate left???
+                int depthLeft = (left != null) ? left.depth():0;
+                int depthRight = (right != null) ? right.depth() : 0;
+                if (Math.Abs(depthRight - depthLeft) > 1)
+                {
+                    if (depthLeft > depthRight)
+                        rotateRight();
+                    else
+                        rotateLeft();
+                }
+                bool ennudan = isAvlBalanced();
+            }
         }
 
         public int count()
