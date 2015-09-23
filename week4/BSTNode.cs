@@ -201,11 +201,11 @@ namespace week4
             BSTNode x = this;
             BSTNode y = this.right;
             
-            BSTNode T2 = this.left;
+            BSTNode T2 = y.left;
  
             // Rotate
             y.left = x;
-            this.right = T2;
+            x.right = T2;
  
             return y;
         }
@@ -213,7 +213,21 @@ namespace week4
 
         public BSTNode rotateRight()
         {
-            return this;
+            if (left == null)
+            {
+                return this;
+            }
+
+            BSTNode x = this;
+            BSTNode y = this.left;
+
+            BSTNode T2 = y.right;
+
+            // Rotate
+            y.right = x;
+            x.left = T2;
+
+            return y;
         }
 
 
