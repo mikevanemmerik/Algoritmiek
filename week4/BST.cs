@@ -106,6 +106,11 @@ namespace week4
             }
         }
 
+        public bool isAvlBalanced()
+        {
+            return root.isAvlBalanced();
+        }
+
 
     }
 }

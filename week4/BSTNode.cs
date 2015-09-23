@@ -187,26 +187,34 @@ namespace week4
 
         public bool isAvlBalanced()
         {
-            if (Math.Abs(left.depth() - right.depth()) > 1)
+            int leftDepth = (left != null) ? left.depth() : 0;
+            int rightDepth = (right != null) ? right.depth() : 0;
+            if (Math.Abs(leftDepth - rightDepth) > 1)
+            {
                 return false;
-            return true;
+            }
+
+            bool leftReturn = (left != null) ? left.isAvlBalanced() : true;
+            bool rightReturn = (right != null) ? right.isAvlBalanced() : true;
+
+            return leftReturn && rightReturn;
         }
 
         public BSTNode rotateLeft()
         {
-            if(right == null)
+            if (right == null)
             {
                 return this;
             }
             BSTNode x = this;
             BSTNode y = this.right;
-            
+
             BSTNode T2 = y.left;
- 
+
             // Rotate
             y.left = x;
             x.right = T2;
- 
+
             return y;
         }
 
