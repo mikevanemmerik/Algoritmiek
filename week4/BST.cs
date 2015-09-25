@@ -25,6 +25,19 @@ namespace week4
             }
         }
 
+        public void insertAvl(int qwe)
+        {
+            if (root == null)
+            {
+                root = new BSTNode(qwe);
+            }
+            else
+            {
+                root.insertAvl(qwe);
+            }
+           
+        }
+
         /**
          * Returns true if the number is present as a node in the tree
          */

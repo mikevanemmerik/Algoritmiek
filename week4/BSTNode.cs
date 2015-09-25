@@ -18,7 +18,7 @@ namespace week4
             this.number = number;
         }
 
-        public void insert(int number)
+        public BSTNode insert(int number)
         {
             if (number < this.number)
             {
@@ -26,7 +26,7 @@ namespace week4
                 if (this.left == null)
                     this.left = new BSTNode(number);
                 else
-                    this.left.insert(number);
+                    this.left = this.left.insert(number);
             }
             else
             {
@@ -34,10 +34,10 @@ namespace week4
                 if (this.right == null)
                     this.right = new BSTNode(number);
                 else
-                    this.right.insert(number);
+                    this.right = this.right.insert(number);
             }
-
-            if(!isAvlBalanced())
+            
+           /* if(!isAvlBalanced())
             {
                 //Als depth LINKS meer, rotate RIght
                 //ALs depth RECHTS meer, rotate left???
@@ -51,7 +51,57 @@ namespace week4
                         rotateLeft();
                 }
                 bool ennudan = isAvlBalanced();
+            }*/
+
+            return this;
+        }
+
+        public BSTNode insertAvl(int number)
+        {
+            if (number < this.number)
+            {
+                // Smaller value, insert it into the left subtree
+                if (this.left == null)
+                    this.left = new BSTNode(number);
+                else
+                    this.left = this.left.insertAvl(number);
+
+                if (!isAvlBalanced())
+                {
+                    if (this.right != null || this.left != null)
+
+                        return this;
+                    //Linkerkind is rechts zwaarder (extra rotatie)
+                    if (this.right.depth() > this.left.depth())
+                        this.rotateLeft();
+
+                    //Linkerkind is links zwaarder
+                    return this.rotateRight();
+                }
             }
+            else
+            {
+                // Larger value, insert it in the right subtree
+                if (this.right == null)
+                    this.right = new BSTNode(number);
+                else
+                    this.right = this.right.insertAvl(number);
+
+                if (!isAvlBalanced())
+                {
+                    if (this.right != null || this.left != null)
+                        return this;
+                    //Het rechterkind is links zwaarder (extra rotatie)
+                    if (this.right.depth() > this.left.depth())
+                        this.rotateRight();
+
+                    //Het rechterkind is rechts zwaarde
+                    return this.rotateLeft();
+                }
+            }
+
+
+            return this;
         }
 
         public int count()
