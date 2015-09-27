@@ -33,7 +33,7 @@ namespace week4
             }
             else
             {
-                root.insertAvl(qwe);
+                root = root.insertAvl(qwe);
             }
            
         }

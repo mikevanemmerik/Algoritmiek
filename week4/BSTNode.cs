@@ -68,13 +68,9 @@ namespace week4
 
                 if (!isAvlBalanced())
                 {
-                    if (this.right != null || this.left != null)
-
-                        return this;
                     //Linkerkind is rechts zwaarder (extra rotatie)
-                    if (this.right.depth() > this.left.depth())
-                        this.rotateLeft();
-
+                    if(this.right == null && this.left.depth() >= 2)
+                        this.left = this.left.rotateLeft();
                     //Linkerkind is links zwaarder
                     return this.rotateRight();
                 }
@@ -89,12 +85,9 @@ namespace week4
 
                 if (!isAvlBalanced())
                 {
-                    if (this.right != null || this.left != null)
-                        return this;
                     //Het rechterkind is links zwaarder (extra rotatie)
-                    if (this.right.depth() > this.left.depth())
-                        this.rotateRight();
-
+                    if(this.left == null && this.right.depth() >= 2)
+                        this.right = this.right.rotateRight();
                     //Het rechterkind is rechts zwaarde
                     return this.rotateLeft();
                 }
@@ -139,7 +132,8 @@ namespace week4
                 }
 
             }
-            else if (right != null)
+            else 
+                if (right != null)
             {
                 ret += right.depth();
             }
