@@ -13,10 +13,14 @@ namespace week4
             //Console.WindowHeight = 500;
             //this.Height = 500;
             BST tree = new BST();
+
+            var rr = new Random(23123);
             for (int i = 1; i <= 100; i++)
             {
-
-                tree.insertAvl(i);
+                int j = rr.Next(1, 500);
+                tree.insertAvl(j);
+                //tree.prettyprint();
+                //Console.WriteLine("\n====================" + tree.isAvlBalanced() + "======================\n");
             }
 
             Console.WriteLine("\n==========================================\n");

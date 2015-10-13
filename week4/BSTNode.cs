@@ -37,22 +37,7 @@ namespace week4
                     this.right = this.right.insert(number);
             }
             
-           /* if(!isAvlBalanced())
-            {
-                //Als depth LINKS meer, rotate RIght
-                //ALs depth RECHTS meer, rotate left???
-                int depthLeft = (left != null) ? left.depth():0;
-                int depthRight = (right != null) ? right.depth() : 0;
-                if (Math.Abs(depthRight - depthLeft) > 1)
-                {
-                    if (depthLeft > depthRight)
-                        rotateRight();
-                    else
-                        rotateLeft();
-                }
-                bool ennudan = isAvlBalanced();
-            }*/
-
+           
             return this;
         }
 
@@ -69,10 +54,15 @@ namespace week4
                 if (!isAvlBalanced())
                 {
                     //Linkerkind is rechts zwaarder (extra rotatie)
-                    if(this.right == null && this.left.depth() >= 2)
+                    if (height(this.left.left) >= height(this.left.right))
+                    {
+                        return this.rotateRight();
+                    }
+                    else
+                    {
                         this.left = this.left.rotateLeft();
-                    //Linkerkind is links zwaarder
-                    return this.rotateRight();
+                        return this.rotateRight();
+                    }
                 }
             }
             else
@@ -86,10 +76,15 @@ namespace week4
                 if (!isAvlBalanced())
                 {
                     //Het rechterkind is links zwaarder (extra rotatie)
-                    if(this.left == null && this.right.depth() >= 2)
+                    if (height(this.right.right) >= height(this.right.left))
+                    {
+                        return this.rotateLeft();
+                    }
+                    else
+                    {
                         this.right = this.right.rotateRight();
-                    //Het rechterkind is rechts zwaarde
-                    return this.rotateLeft();
+                        return this.rotateLeft();
+                    }
                 }
             }
 
@@ -138,6 +133,30 @@ namespace week4
                 ret += right.depth();
             }
             return ret;
+        }
+
+        public int height(BSTNode cur)
+        {
+            if (cur == null)
+            {
+                return -1;
+            }
+            if (cur.left == null && cur.right == null)
+            {
+                return 0;
+            }
+            else if (cur.left == null)
+            {
+                return 1 + height(cur.right);
+            }
+            else if (cur.right == null)
+            {
+                return 1 + height(cur.left);
+            }
+            else
+            {
+                return 1 + Math.Max(height(cur.left), height(cur.right));
+            }
         }
 
         public void print()
@@ -247,17 +266,25 @@ namespace week4
 
         public bool isAvlBalanced()
         {
-            int leftDepth = (left != null) ? left.depth() : 0;
-            int rightDepth = (right != null) ? right.depth() : 0;
-            if (Math.Abs(leftDepth - rightDepth) > 1)
+            bool returnVal = true;
+
+            int leftDepth = 0, rightDepth = 0;
+
+            if (this.left != null)
             {
-                return false;
+                this.left.isAvlBalanced();
+                leftDepth = this.left.depth();
             }
 
-            bool leftReturn = (left != null) ? left.isAvlBalanced() : true;
-            bool rightReturn = (right != null) ? right.isAvlBalanced() : true;
+            if (this.right != null)
+            {
+                this.right.isAvlBalanced();
+                rightDepth = this.right.depth();
+            }
 
-            return leftReturn && rightReturn;
+            if (Math.Abs(leftDepth - rightDepth) > 1) returnVal = false;
+
+            return returnVal;
         }
 
         public BSTNode rotateLeft()
