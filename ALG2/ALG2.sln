@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "week3b", "week3b\week3b.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "week4", "..\week4\week4.csproj", "{96936BFE-E916-4DE4-9FB2-C4CD418090D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tentamen_shizzle", "..\Tentamen_shizzle\Tentamen_shizzle.csproj", "{8A185551-0DCF-4319-BBAA-EED7CAB7A256}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{96936BFE-E916-4DE4-9FB2-C4CD418090D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96936BFE-E916-4DE4-9FB2-C4CD418090D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96936BFE-E916-4DE4-9FB2-C4CD418090D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A185551-0DCF-4319-BBAA-EED7CAB7A256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A185551-0DCF-4319-BBAA-EED7CAB7A256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A185551-0DCF-4319-BBAA-EED7CAB7A256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A185551-0DCF-4319-BBAA-EED7CAB7A256}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
