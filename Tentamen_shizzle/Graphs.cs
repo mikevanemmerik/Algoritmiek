@@ -10,7 +10,7 @@ namespace Tentamen_shizzle
     {
         public Graphs()
         {
-            Graphs();
+            Graphsz();
             MinimumSpanningTree();
             DepthFirstSearch();
             BreadthFirstSearch();
@@ -32,7 +32,7 @@ namespace Tentamen_shizzle
             throw new NotImplementedException();
         }
 
-        private void Graphs()
+        private void Graphsz()
         {
 
         }

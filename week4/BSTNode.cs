@@ -8,10 +8,11 @@ namespace week4
 {
     public class BSTNode
     {
-        private int number;
+        public int number;
 
         public BSTNode left;
         public BSTNode right;
+        public BSTNode parent;
 
         public BSTNode(int number)
         {
@@ -47,7 +48,10 @@ namespace week4
             {
                 // Smaller value, insert it into the left subtree
                 if (this.left == null)
+                {
                     this.left = new BSTNode(number);
+                    this.left.parent = this;
+                }
                 else
                     this.left = this.left.insertAvl(number);
 
@@ -69,7 +73,10 @@ namespace week4
             {
                 // Larger value, insert it in the right subtree
                 if (this.right == null)
+                {
                     this.right = new BSTNode(number);
+                    this.right.parent = this;
+                }
                 else
                     this.right = this.right.insertAvl(number);
 
@@ -101,6 +108,20 @@ namespace week4
         {
             if (left == null) return this.number;
             return left.min();
+        }
+
+        public BSTNode minNode()
+        {
+            if (left == null) 
+                return this;
+            return left.minNode();
+        }
+
+        public BSTNode maxNode()
+        {
+            if (right == null)
+                return this;
+            return right.maxNode();
         }
 
         public int max()
@@ -161,14 +182,58 @@ namespace week4
 
         public void print()
         {
+
+            Console.Write(" - " + number);
             if (left != null)
                 left.print();
 
-            Console.Write(" - " + number);
+           
 
             if (right != null)
                 right.print();
 
+        }
+
+        public void printInOrder()
+        {
+
+            
+            if (left != null)
+                left.printInOrder();
+
+            Console.Write(" - " + number);
+
+            if (right != null)
+                right.printInOrder();
+
+        }
+
+        public void printPreOrder()
+        {
+
+            Console.Write(" - " + number);
+            if (left != null)
+                left.printPreOrder();
+
+
+
+            if (right != null)
+                right.printPreOrder();
+
+        }
+
+        public void printPostOrder()
+        {
+
+            
+            if (left != null)
+                left.printPostOrder();
+
+
+
+            if (right != null)
+                right.printPostOrder();
+            Console.Write(" - " + number);
         }
 
 
@@ -327,5 +392,79 @@ namespace week4
 
 
 
+
+        public BSTNode getInOrderNext()
+        {
+            BSTNode result = this;
+
+            if (right != null)
+            {
+                result = right;
+                while (result.left != null)
+                    result = result.left;
+                return result;
+            }
+            // left child
+            if (parent != null && parent.left == this)
+                return parent;
+            // right child
+            while (result.parent != null && result.parent.left == result)
+                result = result.parent;
+
+            if (result != null)
+                return result.parent;
+            else
+                return null;
+
+        }
+
+        public BSTNode getPreOrderNext()
+        {
+            BSTNode result = this;
+
+            if (left != null)
+            {
+                return left;
+            }
+
+            while (result.parent != null)
+            {
+                if (result.right != null)
+                    return result.right;
+                result = result.parent;
+            }
+                
+
+
+            if (result != null && result.right != null)
+                return result.right;
+            else
+                return null;
+
+        }
+        public BSTNode getPostOrderNext()
+        {
+            BSTNode result = this;
+
+            //1: meest linkse, 
+            //2: Meest linkse van current zijn (misschien) parent
+            //3: VANUITGAAN?: Als parent.right == this? return this
+
+
+            while (result.left != null)
+            {
+                result = result.left;
+                if (result.left == null)
+                    return result;
+            }
+
+            //
+            while (result.parent != null)
+            {
+                result = result.left;
+                if (result.left == null)
+                    return result;
+            }
+        }
     }
 }

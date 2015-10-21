@@ -75,6 +75,8 @@ namespace week4
             return root.depth();
         }
 
+
+
         /**
          * Returns the amount of values in the tree
          * @return
@@ -124,6 +126,55 @@ namespace week4
             return root.isAvlBalanced();
         }
 
+        public void getInOrderNext()
+        {
+            BSTNode diejewil = root.minNode();
+            BSTNode maxNode = root.maxNode();
+            while (diejewil != maxNode)
+           {
+               Console.Write("- " + diejewil.number);
+               diejewil = diejewil.getInOrderNext();
+               
+           }
+            Console.Write("- " + diejewil.number);
+        }
+
+        public void getPreOrderNext()
+        {
+            BSTNode diejewil = root;
+            BSTNode maxNode = (root.maxNode().left != null) ? root.maxNode().left : root.maxNode();
+            while (diejewil != maxNode)
+            {
+                Console.Write("- " + diejewil.number);
+                diejewil = diejewil.getPreOrderNext();
+            }
+            Console.Write("- " + diejewil.number);
+        }
+
+        public void getPostOrderNext()
+        {
+            BSTNode diejewil = root.minNode();
+            BSTNode maxNode = root;
+            
+            while (diejewil != maxNode)
+            {
+                Console.Write("- " + diejewil.number);
+                diejewil = diejewil.getPostOrderNext();
+                
+            }
+            Console.Write("- " + diejewil.number);
+        }
+
+        public void RecursiveOrders()
+        {
+            BSTNode diejewil = root;//.minNode();
+            diejewil.printInOrder();
+            Console.WriteLine();
+            diejewil.printPreOrder();
+            Console.WriteLine();
+            diejewil.printPostOrder();
+            Console.WriteLine();
+        }
 
     }
 }
