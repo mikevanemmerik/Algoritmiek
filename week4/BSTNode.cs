@@ -37,8 +37,8 @@ namespace week4
                 else
                     this.right = this.right.insert(number);
             }
-            
-           
+
+
             return this;
         }
 
@@ -112,7 +112,7 @@ namespace week4
 
         public BSTNode minNode()
         {
-            if (left == null) 
+            if (left == null)
                 return this;
             return left.minNode();
         }
@@ -148,11 +148,11 @@ namespace week4
                 }
 
             }
-            else 
+            else
                 if (right != null)
-            {
-                ret += right.depth();
-            }
+                {
+                    ret += right.depth();
+                }
             return ret;
         }
 
@@ -187,7 +187,7 @@ namespace week4
             if (left != null)
                 left.print();
 
-           
+
 
             if (right != null)
                 right.print();
@@ -197,7 +197,7 @@ namespace week4
         public void printInOrder()
         {
 
-            
+
             if (left != null)
                 left.printInOrder();
 
@@ -225,7 +225,7 @@ namespace week4
         public void printPostOrder()
         {
 
-            
+
             if (left != null)
                 left.printPostOrder();
 
@@ -365,7 +365,11 @@ namespace week4
 
             // Rotate
             y.left = x;
+            y.parent = x.parent;
             x.right = T2;
+            if (T2 != null)
+                T2.parent = x;
+            x.parent = y;
 
             return y;
         }
@@ -385,7 +389,11 @@ namespace week4
 
             // Rotate
             y.right = x;
+            y.parent = x.parent;
             x.left = T2;
+            if(T2 != null)
+                T2.parent = x;
+            x.parent = y;
 
             return y;
         }
@@ -433,7 +441,7 @@ namespace week4
                     return result.right;
                 result = result.parent;
             }
-                
+
 
 
             if (result != null && result.right != null)
@@ -451,20 +459,36 @@ namespace week4
             //3: VANUITGAAN?: Als parent.right == this? return this
 
 
-            while (result.left != null)
-            {
-                result = result.left;
-                if (result.left == null)
-                    return result;
-            }
+            //while (result.left != null)
+            //{
+            //    result = result.left;
+            //    if (result.left == null)
+            //        return result;
+            //}
+            //
+
+            //if(result.parent == this)
+            //{
+
+            //}
 
             //
-            while (result.parent != null)
+            if (result.parent != null )
             {
-                result = result.left;
-                if (result.left == null)
-                    return result;
+                result = result.parent;
+                if (result.right != null && result.right != this){
+                    result = result.right;
+                    while (result.left != null)
+                    {
+                        result = result.left;
+                        if (result.left == null)
+                            return result;
+                    }
+                }
             }
+            return result;
+            //
+
         }
     }
 }

@@ -19,8 +19,8 @@ namespace week4
             {
                 int j = rr.Next(1, 20);
                 tree.insertAvl(j);
-                //tree.prettyprint();
-                //Console.WriteLine("\n====================" + tree.isAvlBalanced() + "======================\n");
+                tree.prettyprint();
+                Console.WriteLine("\n====================" + tree.isAvlBalanced() + "======================\n");
             }
 
             Console.WriteLine("\n==========================================\n");
